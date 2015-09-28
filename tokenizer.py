@@ -14,7 +14,7 @@ from paths import TEXT, TOKENS
 def tokenize(text):
     porter = stem.porter.PorterStemmer()
     if isinstance(text,unicode):
-        r = unicodedata.normalize('NFKD', text.encode('ascii', 'ignore'))
+        r = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore')    
     else:
         r = text
     r = r.translate(None, string.punctuation)
@@ -35,10 +35,10 @@ def main():
         print "Trying for file: " + fil + "\n\n"
         os.chdir(base)
         f = codecs.open(fil, 'r', encoding='utf8')
+        
+
+        retval = "lis = " + str(tokenize(f.read()))
         f.close()
-
-        retval = "lis = " + tokenizer(f.read())
-
         os.chdir(TOKENS)
         w = open(fil, 'w')
         w.write(retval)
