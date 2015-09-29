@@ -29,8 +29,8 @@ def create_index():
 
     os.chdir(INDICES)
     for key, value in ans.items():
-	    w = open("nn" + ans[key] + ".py", 'w')
-	    w.write("ii = " + str(ans[value]))
+	    w = open("nn" + str(key) + ".py", 'w')
+        w.write("ii = " + str(value))
 	    w.close()
 
 

@@ -40,7 +40,7 @@ def main():
         retval = "lis = " + str(tokenize(f.read()))
         f.close()
         os.chdir(TOKENS)
-        w = open(fil, 'w')
+        w = open(fil[:-4]+".py", 'w')
         w.write(retval)
         w.close()
 
