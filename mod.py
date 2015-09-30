@@ -15,13 +15,13 @@ os.chdir(DATA_PATH)
 # vector and stores it in a dictionary.
 
 def main():
-	f  = open("vector_mod.py","w")
 
 	dic = {}
 
 	lists  = os.listdir(SCORES)
 
 	os.chdir(DATA_PATH)
+	f  = open("vector_mod.py","w")
 	for files in lists:
 		if ".pyc" in files or "init" in files:
 			continue
