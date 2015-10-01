@@ -36,11 +36,10 @@ def main():
         os.chdir(base)
         f = codecs.open(fil, 'r', encoding='utf8')
         
-
         retval = "lis = " + str(tokenize(f.read()))
         f.close()
         os.chdir(TOKENS)
-        w = open(fil[:-4]+".py", 'w')
+        w = open(fil[:-4] + ".py", 'w')
         w.write(retval)
         w.close()
 

@@ -170,6 +170,7 @@ def main():
             continue
         print "Comparing this vector with all other vectors"
         ranks = search(query_vector,query_mod, interesting_indices)
+        print ranks
         results(ranks)
 
 if __name__ == "__main__":

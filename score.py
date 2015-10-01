@@ -27,8 +27,11 @@ def main():
                 idf = math.log(float(total_docs)/df)
             tf = 0
             for tup in ii:
+                print tup, d
                 if tup[0][:-3] == d[:-3]:
                     tf = math.log(1 + tup[1],2)
+                    break
+            print tf,df
             score = tf * idf
             doc.append(score)
             print tok
